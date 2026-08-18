@@ -47,7 +47,7 @@ export interface LiveEvent extends InteractionPayload {
 }
 
 export function getAction(id: ActionId): ActionDefinition {
-  return ACTIONS.find((a) => a.id === id) ?? ACTIONS[0];
+  return ACTIONS.find((a) => a.id === id) ?? (ACTIONS[0] as ActionDefinition);
 }
 
 export function sanitizeUsername(raw: string): string {
